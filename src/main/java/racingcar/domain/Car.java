@@ -10,9 +10,16 @@ public class Car {
 
     private final MoveStrategy strategy;
 
-    public Car(String name, int position, MoveStrategy strategy) {
+    public Car(String name, int step, MoveStrategy strategy) {
         this(name, strategy);
-        this.position = new Position(position);
+        this.position = new Position(step);
+    }
+
+    public Car(Name name, Position position, MoveStrategy strategy) {
+        validateMoveStrategy(strategy);
+        this.name = name;
+        this.position = position;
+        this.strategy = strategy;
     }
 
     public Car(String name, MoveStrategy strategy) {
@@ -28,8 +35,16 @@ public class Car {
         }
     }
 
-    public void move() {
-        this.position = strategy.move(this.position);
+    public Car move() {
+        Position movedPosition = strategy.move(this.position);
+        return new Car(name, movedPosition, strategy);
+    }
+
+    public boolean isMoved(Car beforeCar) {
+        if (this.equals(beforeCar)) {
+            return false;
+        }
+        return true;
     }
 
     @Override

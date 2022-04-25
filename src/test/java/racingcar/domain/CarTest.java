@@ -16,10 +16,10 @@ public class CarTest {
         Car car = new Car(DEFAULT_CAR_NAME, Position::moveOneStep);
         MoveStrategy fakeAbsoluteMoveStrategy = ( Position::moveOneStep );
 
-        Car movedCar = new Car(DEFAULT_CAR_NAME, 1, fakeAbsoluteMoveStrategy);
-        car.move();
+        Car expected = new Car(DEFAULT_CAR_NAME, 1, fakeAbsoluteMoveStrategy);
+        Car result = car.move();
 
-        assertThat(car).isEqualTo(movedCar);
+        assertThat(result).isEqualTo(expected);
     }
 
 }
