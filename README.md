@@ -36,7 +36,7 @@
     - [ ] 0 이하의 수 입력 시 IllegalArgumentException을 던진다.
     - [ ] 숫자 이외의 다른 문자 입력 시 IllegalArgumentException을 던진다.
 - [ ] 경주게임을 시작한다.
-    - [ ] 0 ~ 9 사이의 Random 값을 구한다.
+    - [x] 0 ~ 9 사이의 Random 값을 구한다.
     - [ ] Random 값에 따라 자동차를 전진시킨다.
         - 4 이상 -> 전진
         - 3 이하 -> 정지
