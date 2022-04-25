@@ -31,6 +31,7 @@
 
 ## 구현 사항
 - [ ] 경주할 자동차 이름을 입력받는다. (UI)
+    - [ ] 자동차 이름이 5자를 초과한다면 IllegalArgumentException을 던진다.
     - [ ] 공백 입력 시 IllegalArgumentException을 던진다.
 - [ ] 시도할 횟수를 입력받는다. (UI)
     - [ ] 0 이하의 수 입력 시 IllegalArgumentException을 던진다.
