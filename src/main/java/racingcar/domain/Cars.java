@@ -9,17 +9,19 @@ public class Cars {
 
     private final List<Car> cars = new ArrayList<>();
 
-    public Cars(List<Car> cars) {
+    public Cars(List<String> names, MoveStrategy moveStrategy) {
         validate(cars);
-        this.cars.addAll(cars);
+        for (String name : names) {
+            this.cars.add(new Car(name, moveStrategy));
+        }
     }
 
     private void validate(List<Car> cars) {
         if (Objects.isNull(cars)) {
-            throw new IllegalArgumentException("cars는 Null일 수 없습니다.");
+            throw new IllegalArgumentException("names는 Null일 수 없습니다.");
         }
         if (cars.isEmpty()) {
-            throw new IllegalArgumentException("cars는 Enpty 일 수 없습니다.");
+            throw new IllegalArgumentException("names는 Enpty 일 수 없습니다.");
         }
     }
 

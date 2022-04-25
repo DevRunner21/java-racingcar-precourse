@@ -24,4 +24,22 @@ class TryCountTest {
         assertThat(tryCount).isNotNull();
     }
 
+    @Test
+    void getNextTryCount_메서드는_전체_TryCount_수에서_한번_사용한_TryCount를_반환합니다() {
+        int INPUT_TRT_COUNT = 5;
+        TryCount tryCount = new TryCount(INPUT_TRT_COUNT);
+
+        assertThat(tryCount.getNextTryCount()).isEqualTo(new TryCount(INPUT_TRT_COUNT, TryCount.DEFAULT_CURRENT_TRY_COUNT + 1));
+    }
+
+    @Test
+    void complete_메서드는_TryCount_완료_여부를_반환합니다() {
+        int INPUT_TRT_COUNT = 1;
+        TryCount tryCount = new TryCount(INPUT_TRT_COUNT, TryCount.DEFAULT_CURRENT_TRY_COUNT);
+        assertThat(tryCount.isComplete()).isFalse();
+
+        TryCount nextTryCount = tryCount.getNextTryCount();
+        assertThat(nextTryCount.isComplete()).isTrue();
+    }
+
 }
