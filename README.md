@@ -34,7 +34,7 @@
     - [x] 자동차 이름이 5자를 초과한다면 IllegalArgumentException을 던진다.
     - [x] 공백 입력 시 IllegalArgumentException을 던진다.
 - [ ] 시도할 횟수를 입력받는다. (UI)
-    - [ ] 0 이하의 수 입력 시 IllegalArgumentException을 던진다.
+    - [x] 0 이하의 수 입력 시 IllegalArgumentException을 던진다.
     - [ ] 숫자 이외의 다른 문자 입력 시 IllegalArgumentException을 던진다.
 - [ ] 경주게임을 시작한다.
     - [x] 0 ~ 9 사이의 Random 값을 구한다.
