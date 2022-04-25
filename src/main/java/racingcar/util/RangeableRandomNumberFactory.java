@@ -21,7 +21,7 @@ public class RangeableRandomNumberFactory extends AbstractRandomNumberFactory {
     }
 
     @Override
-    public RangeableRandomNumber produce() {
+    public AbstractRandomNumber produce() {
         int randomNumber = Randoms.pickNumberInRange(min, max);
 
         return new RangeableRandomNumber(randomNumber, max, min);
